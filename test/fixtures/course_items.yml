@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category_id: 1
+  course_id: 1
+  pricing_unit: 1
+  princing_portion: 1
+
+two:
+  category_id: 1
+  course_id: 1
+  pricing_unit: 1
+  princing_portion: 1
