@@ -1,5 +1,5 @@
 # About
-This is a simple CRUD application using Ruby on Rails.
+This is a simple CRUD application using Ruby on Rails.</br>
 The business model is based on a Cafe Shop that has a goal to manage products, pricing and daily menus.
 
 # Running
@@ -8,8 +8,8 @@ The business model is based on a Cafe Shop that has a goal to manage products, p
 - Ruby 3.0.1
 - Rails 6.1.3
 
-rails db:migrate
-rails db:seed
+rails db:migrate</br>
+rails db:seed</br>
 rails s
 
 # Model
