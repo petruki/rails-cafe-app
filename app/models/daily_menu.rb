@@ -1,3 +1,3 @@
 class DailyMenu < ApplicationRecord
-    has_many: daily_menu_items
+    has_many :daily_menu_items
 end
