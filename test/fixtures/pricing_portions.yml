@@ -1,15 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   product_id: 1
-  volume_per_unit: 1.5
-  unit: MyString
-  quantity: 1
-  price: 1.5
+  volume_per_unit: 100.0
+  unit: g
+  quantity: 3
+  price: 5.0
 
 two:
-  product_id: 1
-  volume_per_unit: 1.5
-  unit: MyString
-  quantity: 1
-  price: 1.5
+  id: 2
+  product_id: 2
+  volume_per_unit: 50.0
+  unit: g
+  quantity: 3
+  price: 8.0

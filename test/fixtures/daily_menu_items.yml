@@ -3,9 +3,14 @@
 one:
   daily_menu_id: 1
   course_id: 1
-  price: 1.5
+  price: 5.0
 
 two:
   daily_menu_id: 1
-  course_id: 1
-  price: 1.5
+  course_id: 2
+  price: 20.0
+
+three:
+  daily_menu_id: 1
+  course_id: 3
+  price: 15.0

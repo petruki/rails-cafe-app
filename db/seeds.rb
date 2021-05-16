@@ -14,10 +14,10 @@ co1 = Course.create(name: "Single Spaghetti")
 co2 = Course.create(name: "Combo Spaghetti + Dessert")
 co3 = Course.create(name: "Family Spaghetti")
 
-ci1 = CourseItem.create(category_id: ca1.id, course_id: co1.id, pricing_unit: pu1.id)
-ci2 = CourseItem.create(category_id: ca1.id, course_id: co2.id, pricing_unit: pu1.id)
-ci3 = CourseItem.create(category_id: ca2.id, course_id: co2.id, pricing_unit: pu2.id)
-ci4 = CourseItem.create(category_id: ca1.id, course_id: co3.id, princing_portion: pp1.id)
+ci1 = CourseItem.create(category_id: ca1.id, course_id: co1.id, pricing_unit_id: pu1.id)
+ci2 = CourseItem.create(category_id: ca1.id, course_id: co2.id, pricing_unit_id: pu1.id)
+ci3 = CourseItem.create(category_id: ca2.id, course_id: co2.id, pricing_unit_id: pu2.id)
+ci4 = CourseItem.create(category_id: ca1.id, course_id: co3.id, pricing_portion_id: pp1.id)
 
 d1 = DailyMenu.create(created: DateTime.parse("01/05/2021"))
 

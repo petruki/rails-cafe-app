@@ -39,8 +39,8 @@ course
 course_item
   category_id: integer
   course_id: integer
-  pricing_unit: integer
-  princing_portion: integer
+  pricing_unit_id: integer
+  princing_portion_id: integer
 
 daily_menu
   created: date

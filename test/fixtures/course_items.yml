@@ -3,11 +3,19 @@
 one:
   category_id: 1
   course_id: 1
-  pricing_unit: 1
-  princing_portion: 1
+  pricing_unit_id: 1
 
 two:
   category_id: 1
-  course_id: 1
-  pricing_unit: 1
-  princing_portion: 1
+  course_id: 2
+  pricing_unit_id: 1
+
+three:
+  category_id: 2
+  course_id: 2
+  pricing_portion_id: 2
+
+four:
+  category_id: 1
+  course_id: 3
+  pricing_portion_id: 1

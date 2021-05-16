@@ -22,7 +22,15 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product.destroy
+    pu_count = PricingUnit.joins(course_items: [:course])
+      .where(product_id: @product.id).count
+
+    pp_count = PricingPortion.joins(course_items: [:course])
+      .where(product_id: @product.id).count
+
+    if pu_count + pp_count == 0
+      @product.destroy
+    end
 
     redirect_to products_path
   end

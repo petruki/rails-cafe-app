@@ -1,13 +1,22 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   product_id: 1
-  volume: 1.5
-  unit: MyString
-  price: 1.5
+  volume: 100.0
+  unit: g
+  price: 2.0
 
 two:
-  product_id: 1
-  volume: 1.5
-  unit: MyString
-  price: 1.5
+  id: 2
+  product_id: 2
+  volume: 50.0
+  unit: g
+  price: 5.0
+
+two:
+  id: 3 # Can Delete
+  product_id: 3
+  volume: 10.0
+  unit: g
+  price: 1.0
