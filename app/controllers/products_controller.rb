@@ -22,7 +22,6 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    # TODO: Delete PricingPortion and PricingUnit
     @product.destroy
 
     redirect_to products_path
@@ -35,6 +34,6 @@ class ProductsController < ApplicationController
   end
 
   def current_product
-    @dog = Product.find(params[:id])
+    @product = Product.find(params[:id])
   end
 end

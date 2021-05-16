@@ -1,11 +1,11 @@
 p1 = Product.create(name: 'Spaghetti')
 p2 = Product.create(name: 'Tiramisu')
 
-pu1 = PricingUnit.create(product_id: p1, volume: 100.0, unit: 'g', price: 2.0)
-pu2 = PricingUnit.create(product_id: p2, volume: 50.0, unit: 'g', price: 5.0)
+pu1 = PricingUnit.create(product_id: p1.id, volume: 100.0, unit: 'g', price: 2.0)
+pu2 = PricingUnit.create(product_id: p2.id, volume: 50.0, unit: 'g', price: 5.0)
 
-pp1 = PricingPortion.create(product_id: p1, volume_per_unit: 100.0, unit: 'g', quantity: 3, price: 5.0)
-pp2 = PricingPortion.create(product_id: p2, volume_per_unit: 50.0, unit: 'g', quantity: 3, price: 8.0)
+pp1 = PricingPortion.create(product_id: p1.id, volume_per_unit: 100.0, unit: 'g', quantity: 3, price: 5.0)
+pp2 = PricingPortion.create(product_id: p2.id, volume_per_unit: 50.0, unit: 'g', quantity: 3, price: 8.0)
 
 ca1 = Category.create(name: "Main Courses")
 ca2 = Category.create(name: "Desserts")
