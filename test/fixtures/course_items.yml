@@ -1,21 +1,21 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+course_1_item1:
   category_id: 1
   course_id: 1
   pricing_unit_id: 1
 
-two:
+course_2_item1:
   category_id: 1
   course_id: 2
   pricing_unit_id: 1
 
-three:
+course_2_item2:
   category_id: 2
   course_id: 2
   pricing_portion_id: 2
 
-four:
+course_3_item1:
   category_id: 1
   course_id: 3
   pricing_portion_id: 1

@@ -1,6 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+spaghetti_portion:
   id: 1
   product_id: 1
   volume_per_unit: 100.0
@@ -8,7 +8,7 @@ one:
   quantity: 3
   price: 5.0
 
-two:
+tiramisu_portion:
   id: 2
   product_id: 2
   volume_per_unit: 50.0

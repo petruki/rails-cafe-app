@@ -1,2 +1,5 @@
-<h1>Products#edit</h1>
-<p>Find me in app/views/products/edit.html.erb</p>
+<h3>Update Product</h3>
+<%= form_with model: @product do |form| %>
+  <%= form.text_field :name, placeholder: "name" %>
+  <%= form.submit %>
+<% end %>

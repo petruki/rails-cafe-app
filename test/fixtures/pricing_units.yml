@@ -1,21 +1,21 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+spaghetti_unit:
   id: 1
   product_id: 1
   volume: 100.0
   unit: g
   price: 2.0
 
-two:
+tiramisu_unit:
   id: 2
   product_id: 2
   volume: 50.0
   unit: g
   price: 5.0
 
-two:
-  id: 3 # Can Delete
+can_delete_unit:
+  id: 3
   product_id: 3
   volume: 10.0
   unit: g
