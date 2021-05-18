@@ -1,2 +1,12 @@
-<h1>Courses#index</h1>
-<p>Find me in app/views/courses/index.html.erb</p>
+<h1>Courses</h1>
+
+<table>
+  <% @courses.each do |course| %>
+    <tr>
+      <td><%= link_to course.name, course_path(course) %></td>
+      <td><%= button_to 'Edit', edit_course_path(course), method: 'get'%></td>
+      <td><%= button_to 'Remove', course_path(course), method: 'delete', data: { confirm: 'Are you sure?' } %></td>
+  <% end %>
+</table>
+
+<%= button_to 'New course', new_course_path, method: 'get' %>

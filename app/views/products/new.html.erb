@@ -1,7 +1,0 @@
-<h1>New Product</h1>
-<%= form_with model: @product do |form| %>
-    <%= form.text_field :name, placeholder: "name" %>
-    <%= form.submit %>
-<% end %>
-
-<%= button_to 'Return', products_path, method: 'get'%>
