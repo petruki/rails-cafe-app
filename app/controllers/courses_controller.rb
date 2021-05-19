@@ -30,21 +30,6 @@ class CoursesController < ApplicationController
     redirect_back(fallback_location: edit_course_path)
   end
 
-  def create_pricing_portion
-    pricing_portion = params.require(:pricing_portion).permit(:volume_per_unit, :unit, :quantity, :price)
-    pricing_portion[:course_id] = params[:id]
-    PricingPortion.create(pricing_portion)
-
-    redirect_back(fallback_location: edit_course_path)
-  end
-
-  def destroy_pricing_portion
-    pricing_portion = PricingPortion.find(params[:id])
-    pricing_portion.destroy
-
-    redirect_back(fallback_location: edit_course_path)
-  end
-
   def update
     @course.update(course_params)
 
@@ -53,9 +38,8 @@ class CoursesController < ApplicationController
 
   def destroy
     pu_count = PricingUnit.joins(:course).where(course_id: @course.id).count
-    pp_count = PricingPortion.joins(:course).where(course_id: @course.id).count
 
-    if pu_count + pp_count == 0
+    if pu_count == 0
       @course.destroy
     end
 
@@ -71,7 +55,7 @@ class CoursesController < ApplicationController
   private
 
   def course_params
-    params.require(:course).permit(:name)
+    params.require(:course).permit(:name, :category_id)
   end
 
   def current_course
@@ -81,10 +65,5 @@ class CoursesController < ApplicationController
     @pricing_units = Course.joins(:pricing_units)
       .where("pricing_units.course_id": @course.id)
       .select("pricing_units.*")
-
-    @pricing_portion = PricingPortion.new
-    @pricing_portions = Course.joins(:pricing_portion)
-      .where("pricing_portion.course_id": @course.id)
-      .select("pricing_portion.*")
   end
 end

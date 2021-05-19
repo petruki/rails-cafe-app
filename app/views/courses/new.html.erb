@@ -1,7 +1,19 @@
 <h1>New Course</h1>
-<%= form_with model: @course do |form| %>
-    <%= form.text_field :name, placeholder: "name" %>
-    <%= form.submit %>
-<% end %>
+<%= bootstrap_form_for(@course) do |form| %>
+    <div class="col-md-6">
+      <%= form.text_field :name, placeholder: "name" %>
+    </div>
+    <div class="col-md-6">
+      <%= 
+        form.select :category_id, 
+        options_from_collection_for_select(Category.all, :id, :name), 
+        { label: "Category:" } 
+      %>
+    </div>
+    <div class="col-12">
+      <%= form.submit "Create", :class => "btn btn-success", :style => "margin-left: 15px;" %>
+    </div>
+  <% end %>
 
-<%= button_to 'Return', courses_path, method: 'get'%>
+</br>
+<%= button_to 'Return', courses_path, method: 'get', :style => "width: 100px; float: right;", :class => "btn btn-secondary"%>
