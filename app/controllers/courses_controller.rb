@@ -12,7 +12,7 @@ class CoursesController < ApplicationController
   def create
     course = Course.create(course_params)
 
-    redirect_to course_path(course)
+    redirect_to edit_course_path(course)
   end
   
   def create_pricing_unit

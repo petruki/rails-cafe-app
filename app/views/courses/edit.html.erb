@@ -20,7 +20,7 @@
     Pricing
   </div>
   <div style="margin: 30px;">
-    <%= bootstrap_form_tag url: "/courses/#{@course.id}/pricing/unit", model: @pricing_unit, method: :post do |form| %>
+    <%= bootstrap_form_with url: "/courses/#{@course.id}/pricing/unit", model: @pricing_unit, method: :post do |form| %>
     <div class="col-md-4">
       <%= form.text_field :volume %>
     </div>
