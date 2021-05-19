@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :categories
   resources :courses
   resources :daily_menus
+
+  root 'daily_menus#index'
 end

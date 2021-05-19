@@ -62,6 +62,12 @@ class CoursesController < ApplicationController
     redirect_to courses_path
   end
 
+  def course_category(category_id)
+    Category.find(category_id)[:name]
+  end
+
+  helper_method :course_category
+
   private
 
   def course_params

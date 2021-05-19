@@ -1,6 +1,6 @@
 <h1><%= @course.name %></h1>
 
-<table>
+<table class="table">
     <tr>
         <th>Volume</th>
         <th>Price</th>
@@ -16,22 +16,4 @@
     <% end %>
 </table>
 
-<table>
-    <tr>
-        <th>Volume Unit</th>
-        <th>Quantity</th>
-        <th>Price</th>
-    </tr>
-    <% @pricing_portions.each do |pricing_portion| %>
-        <tr>
-            <td>
-                <%= pricing_portion.volume_per_unit %>
-                <%= pricing_portion.unit %>
-            </td>
-            <td><%= pricing_portion.quantity %></td>
-            <td>$<%= pricing_portion.price %></td>
-        </tr>
-    <% end %>
-</table>
-
-<%= button_to 'Return', courses_path, method: 'get'%>
+<%= button_to 'Return', courses_path, method: 'get', :style => "width: 100px; float: right;", :class => "btn btn-secondary"%>
