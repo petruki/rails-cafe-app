@@ -1,2 +1,28 @@
-<h1>Categories#index</h1>
-<p>Find me in app/views/categories/index.html.erb</p>
+<h1>Categories</h1>
+
+<table class="table">
+    <tr>
+        <th>Category</th>
+        <th>In Use</th>
+        <th class="col-xs-1">Action</th>
+        <th class="col-xs-1"></th>
+    </tr>
+    <% @categories.each do |category| %>
+        <tr>
+            <td><%= category.name %></td>
+            <td><%= category_in_use(category.id) ? "Yes" : "No" %></td>
+            <td><%= button_to 'Edit' , edit_category_path(category), method: 'get' , :class=> "btn btn-primary" %></td>
+            <% if not category_in_use(category.id) %>
+                <td>
+                    <%= button_to 'Remove', 
+                        category_path(category), 
+                        method: 'delete', 
+                        data: { confirm: 'Are you sure?' }, 
+                        :class=> "btn btn-danger" %>
+                </td>
+            <% end %>
+        </tr>
+    <% end %>
+</table>
+
+<%= button_to 'New Category' , new_category_path, method: 'get' , :class=> "btn btn-success" %>
