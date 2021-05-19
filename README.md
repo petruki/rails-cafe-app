@@ -14,33 +14,25 @@ rails s
 
 # Model
 ```
-product
+category
   name: string
 
 pricing_unit
-  product_id: integer
+  course_id: integer
   volume: float
   unit: string
   price: float
 
 pricing_portion
-  product_id: integer
+  course_id: integer
   volume_per_unit: float
   unit: string
   quantity: integer
   price: float
 
-category
-  name: string
-
 course
   name: string
-
-course_item
   category_id: integer
-  course_id: integer
-  pricing_unit_id: integer
-  princing_portion_id: integer
 
 daily_menu
   created: date

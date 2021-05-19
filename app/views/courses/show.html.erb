@@ -1,2 +1,19 @@
-<h1>Courses#show</h1>
-<p>Find me in app/views/courses/show.html.erb</p>
+<h1><%= @course.name %></h1>
+
+<table class="table">
+    <tr>
+        <th>Volume</th>
+        <th>Price</th>
+    </tr>
+    <% @pricing_units.each do |pricing_unit| %>
+        <tr>
+            <td>
+                <%= pricing_unit.volume %>
+                <%= pricing_unit.unit %>
+            </td>
+            <td>$<%= pricing_unit.price %></td>
+        </tr>
+    <% end %>
+</table>
+
+<%= button_to 'Return', courses_path, method: 'get', :style => "width: 100px; float: right;", :class => "btn btn-secondary"%>

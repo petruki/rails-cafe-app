@@ -1,2 +1,39 @@
-<h1>Courses#edit</h1>
-<p>Find me in app/views/courses/edit.html.erb</p>
+<h1>Editing Course</h1>
+<%= bootstrap_form_for(@course) do |form| %>
+  <%= form.text_field :name, placeholder: "name" %>
+  <%= 
+    form.select :category_id, 
+    options_from_collection_for_select(Category.all, :id, :name, @course.category_id), 
+    { label: "Category:" } 
+  %>
+  <%= form.submit "Update", :class => "btn btn-primary", :style => "width: 100px; float: right;" %>
+<% end %>
+
+<div class="container-fluid" style="margin-top: 50px;">
+  <%= bootstrap_form_tag url: "/courses/#{@course.id}/pricing/unit", model: @pricing_unit, method: :post do |form| %>
+    <%= form.text_field :volume %>
+    <%= form.text_field :unit %>
+    <%= form.text_field :price %>
+    <%= form.submit "Add", :class => "btn btn-success" %>
+  <% end %>
+
+  <table class="table">
+    <tr>
+        <th>Volume</th>
+        <th>Price</th>
+        <th class="col-xs-1">Action</th>
+    </tr>
+    <% @pricing_units.each do |pricing_unit| %>
+      <tr>
+        <td>
+          <%= pricing_unit.volume %>
+          <%= pricing_unit.unit %>
+        </td>
+        <td>$<%= pricing_unit.price %></td>
+        <td><%= button_to 'Remove', destroy_pricing_unit_path(pricing_unit), method: 'delete', :class => "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<%= button_to 'Return', courses_path, method: 'get', :style => "width: 100px; float: right;", :class => "btn btn-secondary"%>

@@ -1,2 +1,19 @@
-<h1>Courses#index</h1>
-<p>Find me in app/views/courses/index.html.erb</p>
+<h1>Courses</h1>
+
+<table class="table">
+  <tr>
+    <th>Cateogry</th>
+    <th>Course</th>
+    <th class="col-xs-1">Action</th>
+    <th class="col-xs-1"></th>
+  </tr>
+  <% @courses.each do |course| %>
+    <tr>
+      <td><%= course_category(course.category_id) %></td>
+      <td><%= link_to course.name, course_path(course) %></td>
+      <td><%= button_to 'Edit', edit_course_path(course), method: 'get', :class => "btn btn-primary" %></td>
+      <td><%= button_to 'Remove', course_path(course), method: 'delete', data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
+  <% end %>
+</table>
+
+<%= button_to 'New course', new_course_path, method: 'get', :class => "btn btn-success" %>

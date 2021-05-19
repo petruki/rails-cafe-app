@@ -1,13 +1,16 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-single_spaghetti:
+spaghetti:
   id: 1
-  name: Single Spaghetti
+  name: Spaghetti
+  category_id: 1
 
-combo_spaghetti:
+tiramisu:
   id: 2
-  name: Combo Spaghetti
+  name: Tiramisu
+  category_id: 2
 
-special:
+can_delete:
   id: 3
-  name: Special
+  name: Can Delete
+  category_id: 2

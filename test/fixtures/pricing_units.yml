@@ -2,21 +2,14 @@
 
 spaghetti_unit:
   id: 1
-  product_id: 1
+  course_id: 1
   volume: 100.0
   unit: g
   price: 2.0
 
 tiramisu_unit:
   id: 2
-  product_id: 2
+  course_id: 2
   volume: 50.0
   unit: g
   price: 5.0
-
-can_delete_unit:
-  id: 3
-  product_id: 3
-  volume: 10.0
-  unit: g
-  price: 1.0
