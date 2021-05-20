@@ -1,6 +1,13 @@
 @import "bootstrap";
 @import "rails_bootstrap_forms";
 
-body {
-  padding-top: 100px;
+header {
+    a {
+        color: gray !important;
+    }
+
+    a:hover {
+        text-decoration: none;
+        color: white !important;
+    }
 }

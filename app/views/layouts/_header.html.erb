@@ -1,13 +1,17 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <nav>
-      <ul class="nav navbar-nav navbar-right collapse navbar-collapse"
-          id="bs-example-navbar-collapse-1">
-        <li><%= link_to "Daily Menu", daily_menus_path %></li>
-        <li><%= link_to "Categories", categories_path %></li>
-        <li><%= link_to "Courses", courses_path %></li>
-        <li><%= link_to "Log out", root_path %></li>
+<header class="navbarnavbar-fixed-top navbar-expand-lg navbar-dark bg-dark">
+  <div>
+    <label class="navbar-brand">Rails Cafe Management</label>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><%= link_to "Menu", daily_menus_path, :class => "nav-link active" %></li>
+        <li class="nav-item"><%= link_to "Categories", categories_path, :class => "nav-link active" %></li>
+        <li class="nav-item"><%= link_to "Courses", courses_path, :class => "nav-link active" %></li>
+        <li class="d-flex"><%= link_to "Log out", root_path, :class => "nav-link active" %></li>
       </ul>
-    </nav>
+    </div>
   </div>
 </header>
