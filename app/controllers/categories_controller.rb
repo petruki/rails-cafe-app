@@ -27,12 +27,6 @@ class CategoriesController < ApplicationController
     redirect_to categories_path
   end
 
-  def category_in_use(category_id)
-    Course.where(category_id: category_id).count > 0
-  end
-
-  helper_method :category_in_use
-
   private
 
   def category_params

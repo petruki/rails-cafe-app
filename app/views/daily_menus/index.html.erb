@@ -1,6 +1,7 @@
 <h1>Daily Menu</h1>
 
 <% Category.all.each do |category| %>
+    <% if category_in_use(category.id) %>
     <h3><%= category.name %></h3>
     <table class="table">
         <tr>
@@ -8,7 +9,7 @@
             <th>Volume</th>
             <th>Price</th>
         </tr>
-        <% get_items_by_category(category.id).each do |item| %>
+        <% get_items_by_category(@current_daily_menu.id, category.id).each do |item| %>
             <tr>
                 <td><%= item.name %></td>
                 <td><%= item.volume %></td>
@@ -17,4 +18,5 @@
         <% end %>
     </table>
     <br/>
+    <% end %>
 <% end %>
