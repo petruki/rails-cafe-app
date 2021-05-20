@@ -1,4 +1,13 @@
-<h1>Daily Menu</h1>
+<h1>Daily Menu - <%= @current_daily_menu.created_at.strftime("%B %d, %Y") %></h1>
+
+<%= link_to 'New' , new_daily_menu_path, method: 'get', :class=> "btn btn-success" %>
+<% if not @current_daily_menu.nil? %>
+    <%= link_to 'Edit', edit_daily_menu_path(@current_daily_menu), method: 'get', :class=> "btn btn-primary" %>
+    <%= link_to 'Delete', daily_menu_path(@current_daily_menu), 
+        method: 'delete', data: { confirm: 'Are you sure?' }, 
+        :class=> "btn btn-danger", :style=> "float: right" %>
+<% end %>
+<br/><br/>
 
 <% Category.all.each do |category| %>
     <% if category_in_use(category.id) %>

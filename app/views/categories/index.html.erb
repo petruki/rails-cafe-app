@@ -1,4 +1,6 @@
 <h1>Categories</h1>
+<%= button_to 'New' , new_category_path, method: 'get' , :class=> "btn btn-success" %>
+<br/><br/>
 
 <table class="table">
     <tr>
@@ -24,5 +26,3 @@
         </tr>
     <% end %>
 </table>
-
-<%= button_to 'New Category' , new_category_path, method: 'get' , :class=> "btn btn-success" %>

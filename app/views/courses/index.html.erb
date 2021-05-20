@@ -1,4 +1,6 @@
 <h1>Courses</h1>
+<%= button_to 'New', new_course_path, method: 'get', :class => "btn btn-success" %>
+<br/><br/>
 
 <table class="table">
   <tr>
@@ -16,5 +18,3 @@
     </tr>
   <% end %>
 </table>
-
-<%= button_to 'New Course', new_course_path, method: 'get', :class => "btn btn-success" %>
