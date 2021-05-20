@@ -2,15 +2,10 @@
 
 menu1_course1:
   daily_menu_id: 1
-  course_id: 1
+  pricing_unit_id: 1
   price: 5.0
 
 menu1_course2:
   daily_menu_id: 1
-  course_id: 2
+  pricing_unit_id: 2
   price: 20.0
-
-menu1_course3:
-  daily_menu_id: 1
-  course_id: 3
-  price: 15.0
