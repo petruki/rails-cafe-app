@@ -24,13 +24,14 @@
             <th>Course</th>
             <th>Volume</th>
             <th>Price</th>
-            <th class="col-xs-1">Action</th>
+            <th class="col-xs-1" colspan="2">Action</th>
         </tr>
         <% get_items_by_category(@current_daily_menu.id, category.id).each do |item| %>
             <tr>
                 <td><%= item.name %></td>
                 <td><%= item.volume %></td>
                 <td><%= item.price %></td>
+                <td><%= link_to 'Edit', update_item_path(@current_daily_menu.id, item.id), :class => "btn btn-primary" %></td>
                 <td><%= button_to 'Remove', daily_menu_item_path(item.id), method: 'delete', :class => "btn btn-danger" %></td>
             </tr>
         <% end %>

@@ -6,8 +6,9 @@ Rails.application.routes.draw do
 
   resources :daily_menus
   resources :daily_menu_items
-  get       "/daily_menu_items/:menu/:category", to: "daily_menu_items#edit"
-  post      "/daily_menu_items/:menu/:item_id", to: "daily_menu_items#add"
+  post      "/daily_menu_items/:menu/:item_id",   to: "daily_menu_items#add"
+  get       "/daily_menu_items/edit/:menu/:category",  to: "daily_menu_items#edit"
+  get       "/daily_menu_items/update/:menu/:id",   to: "daily_menu_items#show", as: "update_item"
 
   root 'daily_menus#index'
 end
