@@ -29,7 +29,7 @@
         <% get_items_by_category(@current_daily_menu.id, category.id).each do |item| %>
             <tr>
                 <td><%= item.name %></td>
-                <td><%= item.volume %></td>
+                <td><%= item.volume %><%= item.unit %></td>
                 <td><%= item.price %></td>
                 <td><%= link_to 'Edit', update_item_path(@current_daily_menu.id, item.id), :class => "btn btn-primary" %></td>
                 <td><%= button_to 'Remove', daily_menu_item_path(item.id), method: 'delete', :class => "btn btn-danger" %></td>
