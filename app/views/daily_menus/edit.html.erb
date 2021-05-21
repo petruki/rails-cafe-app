@@ -9,6 +9,9 @@
     </div>
     <div class="col-12">
         <%= form.submit "Select", :class => "btn btn-primary", :style => "margin-left: 15px;" %>
+        <% if not @selected_category.nil? %>
+            <%= link_to 'Add Course', "/daily_menu_items/#{@current_daily_menu.id}/#{@selected_category}", method: 'get', :class => "btn btn-primary" %>
+        <% end %>
     </div>
 <% end %>
 <br/><br/>
@@ -32,7 +35,6 @@
             </tr>
         <% end %>
     </table>
-    <%= link_to 'Add Course', "/daily_menu_items/#{@current_daily_menu.id}/#{category.id}", method: 'get', :class => "btn btn-primary" %>
     <br/>
     <% end %>
 <% end %>
