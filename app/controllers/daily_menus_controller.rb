@@ -1,5 +1,4 @@
 class DailyMenusController < ApplicationController
-  include DailyMenusHelper
   before_action :load_menu, only: [:index, :show, :edit, :update, :destroy]
 
   def new
@@ -17,6 +16,8 @@ class DailyMenusController < ApplicationController
 
   def destroy
   end
+
+  private
 
   def load_menu
     @current_daily_menu = DailyMenu.order("created_at").last
