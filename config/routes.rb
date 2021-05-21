@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
-  delete "/courses/:id/pricing/unit", to: "courses#destroy_pricing_unit", as: "destroy_pricing_unit"
-  post "/courses/:id/pricing/unit", to: "courses#create_pricing_unit"
-  delete "/courses/:id/pricing/portion", to: "courses#destroy_pricing_portion", as: "destroy_pricing_portion"
-  post "/courses/:id/pricing/portion", to: "courses#create_pricing_portion"
-
   resources :categories
   resources :courses
+  delete    "/courses/:id/pricing/unit", to: "courses#destroy_pricing_unit", as: "destroy_pricing_unit"
+  post      "/courses/:id/pricing/unit", to: "courses#create_pricing_unit"
+
   resources :daily_menus
+  resources :daily_menu_items, only: [:destroy]
 
   root 'daily_menus#index'
 end

@@ -4,6 +4,6 @@ module DailyMenusHelper
           .where(
             "daily_menu_item.daily_menu": daily_menu_id, 
             "courses.category_id": category_id
-          ).select("pricing_units.volume, courses.name , daily_menu_item.price")
+          ).select("pricing_units.volume, courses.name , daily_menu_item.*")
     end
 end

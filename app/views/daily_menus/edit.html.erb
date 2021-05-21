@@ -1,2 +1,37 @@
-<h1>DailyMenus#edit</h1>
-<p>Find me in app/views/daily_menus/edit.html.erb</p>
+<h1>Editing Daily Menu</h1>
+<br/>
+
+<%= bootstrap_form_with url: "/daily_menus/#{@current_daily_menu.id}/edit", method: :get do |form| %>
+    <div class="col-md-4">
+        <%= select_tag "category", 
+            options_from_collection_for_select(Category.all, "id", "name", @selected_category), 
+            :class => "form-control" %>
+    </div>
+    <div class="col-12">
+        <%= form.submit "Select", :class => "btn btn-primary", :style => "margin-left: 15px;" %>
+    </div>
+<% end %>
+<br/><br/>
+
+<% Category.all.each do |category| %>
+    <% if filter_category(category.id) %>
+    <h3><%= category.name %></h3>
+    <table class="table">
+        <tr>
+            <th>Course</th>
+            <th>Volume</th>
+            <th>Price</th>
+            <th class="col-xs-1">Action</th>
+        </tr>
+        <% get_items_by_category(@current_daily_menu.id, category.id).each do |item| %>
+            <tr>
+                <td><%= item.name %></td>
+                <td><%= item.volume %></td>
+                <td><%= item.price %></td>
+                <td><%= button_to 'Remove', daily_menu_item_path(item.id), method: 'delete', :class => "btn btn-danger" %></td>
+            </tr>
+        <% end %>
+    </table>
+    <br/>
+    <% end %>
+<% end %>
