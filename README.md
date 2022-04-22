@@ -2,6 +2,8 @@
 This is a simple CRUD application using Ruby on Rails.</br>
 The business model is based on a Cafe Shop that has a goal to manage products, pricing and daily menus.
 
+Status: incomplete
+
 # Running
 
 **Requirements:**
